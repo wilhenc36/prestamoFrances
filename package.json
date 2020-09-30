@@ -4,7 +4,8 @@
   "description": "Calcula prestamos con el metodo Frances",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
@@ -13,12 +14,16 @@
   "keywords": [
     "prestamo",
     "node",
-    "express"
+    "express",
+    "handlebars"
   ],
   "author": "Wilhen Cruz",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wilhenc36/prestamoFrances/issues"
   },
-  "homepage": "https://github.com/wilhenc36/prestamoFrances#readme"
+  "homepage": "https://github.com/wilhenc36/prestamoFrances#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
