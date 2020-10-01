@@ -1,12 +1,19 @@
 // Importar express
 const express = require("express");
+// Importar handlebar como template engine
+const exphbs = require("express-handlebars");
 
 // Crear un servidor
 const app = express();
 
+// Indicar a express, utilizar handlebars como template engine
+app.engine("hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
+
+app.set("view engine", "hbs");
+
 // Crear una ruta para /
 app.get("/", (req, res, next) => {
-  res.send("Bienvenido");
+  res.render("formulario_prestamo");
 });
 
 // Crear una ruta para /carrito
