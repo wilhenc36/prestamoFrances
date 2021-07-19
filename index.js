@@ -4,8 +4,12 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 // Importar body parser que nos permite acceder al cuerpo de la peticion HTTP
 const bodyParser = require("body-parser");
+const path = require("path");
 // Importar la funcion de calculo de metodo Frances
 const { calcularMetodoFrances } = require("./calculoMetodoFrances");
+
+//Habilitar el archivo de variables de entorno
+require("dotenv").config({ path: ".env" });
 
 // Crear un servidor
 const app = express();
@@ -14,6 +18,8 @@ const app = express();
 app.engine("hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
 
 app.set("view engine", "hbs");
+
+app.use(express.static(path.join(__dirname, "public")));
 
 // Habilitar body parser para leer los datos del cuerpo de las peticions POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -38,7 +44,9 @@ app.post("/prestamo", (req, res, next) => {
   }
 });
 
-// Inicializar el servidor en un puerto en especifico
-app.listen(3000, () => {
-  console.log("Servidor ejecutandose en el puerto 3000");
+const host = "0.0.0.0";
+const port = process.env.PORT;
+
+app.listen(port, host, () => {
+  console.log(`Servidor ejecutandose en el puerto ${port}`);
 });
