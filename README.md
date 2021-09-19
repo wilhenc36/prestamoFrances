@@ -1,9 +1,9 @@
 # Prestamo Frances - NodeJS
 
-Puedes ver la demo aqui: https://prestamofrances.herokuapp.com/
+You can see the demo here: https://prestamofrances.herokuapp.com/
 
-Este programa calcula un prestamo por el metodo frances dado el monto del prestamo, la tasa de interes anual y el plazo en años.
+This program calculates a loan by the French method given the loan amount, the annual interest rate and the term in years.
 
-No olvides instalar los paquetes de Node
+Don't forget to install the Node packages
 
 ### `npm install`
